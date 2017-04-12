@@ -6,18 +6,6 @@ LOCAL_PATH := $(call my-dir)
 #ifeq ($(strip $(TARGET_ARCH)), arm)
 
 ###############################################################################
-ifneq (,$(filter userdebug eng,$(TARGET_BUILD_VARIANT)))
-# busybox
-include $(CLEAR_VARS)
-LOCAL_MODULE := busybox
-LOCAL_MODULE_TAGS := eng
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_MODULE_STEM := $(LOCAL_MODULE)
-LOCAL_SRC_FILES := $(TARGET_ARCH)/$(LOCAL_MODULE)
-include $(BUILD_PREBUILT)
-endif
-
-###############################################################################
 # mkdosfs
 include $(CLEAR_VARS)
 LOCAL_MODULE := mkdosfs
